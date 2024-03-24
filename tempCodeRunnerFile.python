@@ -1,0 +1,68 @@
+from tkinter import *
+
+m = Tk()
+m.geometry("800x700")
+m.config(bg="aqua")
+rasm=PhotoImage(file="C:\\Users\\user\\OneDrive\\Desktop\\a\\dastur.png")
+label=Label(m, image=rasm)
+label.place(x=800, y=200)
+
+def tekshir():
+    if a.get() == 0 and b.get() == 0 and c.get() == 3:
+        natija.config(text="Javob to'g'ri")
+    else:
+        natija.config(text="Noto'g'ri javob")
+
+def hisobla():
+    if d.get() == 4 and e.get() == 0 and f.get() == 0:
+        natija1.config(text="Javob to'g'ri")
+    else:
+        natija1.config(text="Noto'g'ri javob")
+
+lb1 = Label(m, text="Bilimingizni sinab koʻring?", font="Arial 8", bg="light blue")
+lb1.place(x=20, y=25)
+
+lb2 = Label(m, text="a=17.03 , b=round(a) dastur natijasini koʻrsating?", font="Arial 8", bg="light blue")
+lb2.place(x=20, y=75)
+
+lb3 = Label(m, text="a=Talaba,izlanishdan toʻxtama! print=len(a) ",font="Arial 8", bg="light blue")
+lb3.place(x=20, y=300)
+
+
+a = IntVar()
+b = IntVar()
+c = IntVar()
+
+d = IntVar()
+e = IntVar()
+f = IntVar()
+
+ch = Radiobutton(m, text="18", bg="light blue", font="Arial 8", variable=a, value=1)
+ch.place(x=10, y=125)
+
+ch1 = Radiobutton(m, text="19", bg="light blue", font="Arial 8", variable=b, value=2)
+ch1.place(x=10, y=175)
+
+ch2 = Radiobutton(m, text="17", font="Arial 8", bg="light blue", variable=c, value=3)
+ch2.place(x=10, y=225)
+
+ch3 = Radiobutton(m, text="29", font="Arial 8", bg="light blue", variable=d, value=4)
+ch3.place(x=10, y=350)
+
+ch4 = Radiobutton(m, text="28", font="Arial 8", bg="light blue", variable=e, value=5)
+ch4.place(x=10, y=400)
+
+ch5 = Radiobutton(m, text="27", font="Arial 8", bg="light blue", variable=f, value=6)
+ch5.place(x=10, y=450)
+
+Button(m, text="Tekshirish", font="Arial 8", bg="green", command=tekshir).place(x=700, y=200)
+
+natija = Label(m, text="Natija", font="Arial 7", fg="red")
+natija.place(x=700, y=250)
+
+Button(m, text="Tekshirish", font="Arial 7", bg="green", command=hisobla).place(x=700, y=450)
+
+natija1 = Label(m, text="Natija", font="Arial 7", fg="red")
+natija1.place(x=700, y=500)
+
+m.mainloop()

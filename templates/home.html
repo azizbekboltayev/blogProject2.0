@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block title %}Homepage{% endblock title %}
+
+{% block content %}
+<br/>
+    <div class="jumbotron">
+        <h1 class="display-4">Assalom alaykum!</h1>
+        <p class="lead">Azizbek Boltayevning shaxsiy blogiga xush kelibsiz.</p>
+        <hr class="my-4">
+        <p>Bu yerda siz dasturlash va dasturchilarga oid so'nggi yangiliklardan xabardor bo'lib turasiz.</p>
+        <p class="lead">
+            <a class="btn btn-primary btn-lg" href="{% url 'article_list' %}" role="button">Postlarni ko'rish</a>
+        </p>
+    </div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <div class="text-center">
+                {% if user.is_authenticated %}
+                    <h2>Welcome, {{ user.username | title }}! </h2>
+                    <p><a href="{% url 'logout' %}" class="btn btn-danger">Chiqib ketish</a></p>
+                {% else %}
+                    <h2 class="mb-4">Welcome!</h2>
+                    <p class="mb-4">You are not logged in. Please register or login to access the site.</p>
+                    <a href="{% url 'login' %}" class="btn btn-primary mr-2">Enter</a>
+                    <a href="{% url 'signup' %}" class="btn btn-success">Sign up</a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
