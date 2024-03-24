@@ -11,6 +11,7 @@ environs = "*"
 psycopg2-binary = "*"
 whitenoise = "*"
 gunicorn = "*"
+dj-database-url = "==0.5.0"
 
 [dev-packages]
 
